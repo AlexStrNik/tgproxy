@@ -1,4 +1,5 @@
 var socks5 = require('simple-socks');
-server = socks5.createServer().listen(1080,function () {
-    console.log('SOCKS5 proxy server started on localhost:1080');
+var port = process.env.PORT;
+server = socks5.createServer().listen(process.env.PORT,function () {
+    console.log('SOCKS5 proxy server started on localhost:process.env.PORT');
 });
