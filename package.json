@@ -4,4 +4,7 @@
   "dependencies": {
     "simple-socks": "^0.2.7"
   }
+  "scripts": {
+    "start": "node index.js"
+  }
 }
