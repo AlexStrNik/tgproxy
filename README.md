@@ -1,1 +1,5 @@
-"# tgproxy" 
+# tgproxy
+
+```js
+UFO.deleted('README')
+```
