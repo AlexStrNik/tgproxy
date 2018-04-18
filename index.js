@@ -1,7 +1,8 @@
 var socks5 = require('simple-socks');
-var port = process.env.PORT||8080;
-server = socks5.createServer().listen(port,function () {
-    console.log(`SOCKS5 proxy server started on localhost:${port}`);
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+server = socks5.createServer().listen(port,ip,function () {
+    console.log(`SOCKS5 proxy server started on ${ip}:${port}`);
 });
 server.on('proxyConnect', function (info, destination) {
     console.log('connected to remote server at %s:%d', info.host, info.port);
